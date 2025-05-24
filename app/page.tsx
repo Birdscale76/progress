@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import "./globals.css";
-import { ThemeSwitcher } from "@/components/theme-switcher";
+import Footer from '@/components/footer';
 
 export default function HomePage() {
   return (
@@ -110,27 +110,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <footer id="foot note" className="flex-none w-full border-t border-foreground/10 bg-background h-16">
-              <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between px-5 py-2 h-16">
-                <p className="text-primary text-xs md:text-base text-center">
-                  © {new Date().getFullYear()} Drone Progress Pro. All rights reserved.
-                </p>
-                <div className="flex items-center gap-2">
-                  <p className="text-primary text-xs md:text-base text-center">
-                    Powered by{" "}
-                    <a
-                      href="https://birdscale.com"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="font-bold hover:underline"
-                    >
-                      Birdscale
-                    </a>
-                  </p>
-                  <ThemeSwitcher />
-                </div>
-              </div>
-            </footer> 
+      <Footer />
     </main>
   );
 }
