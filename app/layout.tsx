@@ -11,8 +11,8 @@ const defaultUrl = process.env.VERCEL_URL
 
 export const metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Next.js and Supabase Starter Kit",
-  description: "The fastest way to build apps with Next.js and Supabase",
+  title: "Progress Pro",
+  description: "Aerial Intelligence for seamless progress monitoring",
 };
 
 const geistSans = Geist({
@@ -35,16 +35,16 @@ export default function RootLayout({
           disableTransitionOnChange
         >
     <main className="min-h-screen flex flex-col w-full bg-background text-foreground ">
-            <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-              <div className="w-full flex justify-between items-center px-8 sm:px-8 md:px-12 lg:px-16">
-                <div className="flex gap-5 items-center text-sm md:text-lg font-semibold">
+            <nav className="fixed top-0 w-full flex justify-center bg-background border-b border-b-foreground/10 h-16 z-50">
+              <div className="w-full flex justify-between items-center px-6 md:px-12 lg:px-16">
+                <div className="flex items-center text-base md:text-lg font-semibold">
                   <Link href="/">Progress Pro</Link>
                 </div>
                 <HeaderAuth />
               </div>
             </nav>
 
-            <div className="flex-1 w-full flex flex-col items-center  bg-muted-foreground/10">
+            <div className="pt-16 h-screen overflow-y-auto snap-y snap-mandatory">
               {children}
             </div>
           </main>
