@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { createClient } from "@/utils/supabase/server";
+import UserBadge from "./UserBadge";
 
 export default async function AuthButton() {
   const supabase = await createClient();
@@ -50,7 +51,8 @@ export default async function AuthButton() {
   }
   return user ? (
     <div className="flex items-center gap-4">
-      Hey, {user.email}!
+      {/* Hey, {user.user_metadata?.displayName}! */}
+       <UserBadge user={user} size={10} className="ml-auto" />
       <form action={signOutAction}>
         <Button type="submit" variant={"outline"}>
           Sign out
