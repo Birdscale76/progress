@@ -7,7 +7,7 @@ export default async function Layout({
 }) {
   return (
     <>
-    <div className=" max-w-7xl  flex flex-col gap-20 py-10 items-start">{children}</div>
+    <div className=" max-w-7xl mx-auto flex flex-col gap-20 py-10 justify-center">{children}</div>
     <Footer />
     </>
   );
