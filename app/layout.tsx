@@ -4,6 +4,7 @@ import { Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import Link from "next/link";
 import "./globals.css";
+import DynamicNav from '@/components/dynamic-nav';
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -34,16 +35,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-    <main className="min-h-screen flex flex-col w-full bg-background text-foreground ">
-            <nav className="fixed top-0 w-full flex justify-center bg-background border-b border-b-foreground/10 h-16 z-50">
-              <div className="w-full flex justify-between items-center px-6 md:px-12 lg:px-16">
-                <div className="flex items-center text-base md:text-lg font-semibold">
-                  <Link href="/">Progress Pro</Link>
-                </div>
-                <HeaderAuth />
-              </div>
-            </nav>
-
+          <main className="min-h-screen flex flex-col w-full bg-background text-foreground ">
+            <DynamicNav />
             <div className="pt-16 h-screen overflow-y-auto snap-y snap-mandatory">
               {children}
             </div>
