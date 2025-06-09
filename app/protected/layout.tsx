@@ -11,7 +11,7 @@ export default function DashboardLayout({
     <>
       <DynamicNav link="/protected" label="Progress Pro / Projects" />
       {children}
-      <Footer />
+      <Footer/>
     </>
   );
 }
