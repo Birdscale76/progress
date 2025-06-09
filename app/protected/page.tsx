@@ -48,21 +48,20 @@ export default function ProjectsPage() {
   const userId = session?.user?.id;
 
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-semibold mb-6">Projects</h1>
-
-      <div className="flex mb-6">
-        <input
-          type="text"
-          placeholder="Search projects..."
-          className="flex-grow border rounded px-3 py-2 mr-2"
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-        />
-        <button className="bg-blue-600 text-white px-4 py-2 rounded">
-          Add Project
-        </button>
-      </div>
+    <div className="mt-4 px-6 md:px-12 lg:px-16">
+      {/* <h1 className="text-base md:text-lg font-semibold mb-4">Projects</h1> */}
+      <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mb-6 max-w-3xl mx-auto">
+      <input
+        type="text"
+        placeholder="Search projects..."
+        className="flex-grow border rounded px-3 py-2 w-full sm:w-auto"
+        value={search}
+        onChange={e => setSearch(e.target.value)}
+      />
+      <button className="bg-blue-600 text-white px-4 py-2 rounded whitespace-nowrap">
+        Add Project
+      </button>
+    </div>
 
       {loading ? (
         <p>Loading...</p>

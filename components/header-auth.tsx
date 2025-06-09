@@ -49,15 +49,32 @@ export default async function AuthButton() {
       </>
     );
   }
+
   return user ? (
     <div className="flex items-center gap-4">
-      {/* Hey, {user.user_metadata?.displayName}! */}
-       <UserBadge user={user} size={10} className="ml-auto" />
-      <form action={signOutAction}>
-        <Button type="submit" variant={"outline"}>
-          Sign out
-        </Button>
-      </form>
+      <details className="relative">
+        <summary className="list-none">
+          {/* UserBadge acts as trigger */}
+          <UserBadge user={user} size={10} className="cursor-pointer" />
+        </summary>
+        <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg py-2 z-50">
+          <div className="px-4 py-2 text-sm text-background">
+            Hey, {user.user_metadata?.displayName ||
+             user.user_metadata?.display_name ||
+             user.user_metadata?.name ||
+             user.user_metadata?.full_name ||
+             user.email}
+          </div>
+          <form action={signOutAction}>
+            <button
+              type="submit"
+              className="block w-full text-left px-4 py-2 text-sm text-destructive hover:bg-gray-100"
+            >
+              Sign out
+            </button>
+          </form>
+        </div>
+      </details>
     </div>
   ) : (
     <div className="flex gap-2">

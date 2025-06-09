@@ -1,5 +1,6 @@
 // app/dashboard/layout.tsx (Nested Layout)
 import DynamicNav from '@/components/dynamic-nav';
+import Footer from '@/components/footer';
 
 export default function DashboardLayout({
   children,
@@ -8,8 +9,9 @@ export default function DashboardLayout({
 }) {
   return (
     <>
-      <DynamicNav link="/dashboard" label="Dashboard Pro" />
+      <DynamicNav link="/protected" label="Progress Pro / Projects" />
       {children}
+      <Footer />
     </>
   );
 }
